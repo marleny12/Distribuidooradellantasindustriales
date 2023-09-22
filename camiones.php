@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería de Productos Interactivos</title>
-    <!-- Enlace a Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         /* Estilos para los mosaicos de productos */
@@ -103,28 +102,27 @@
 
                         
 
-        <!-- Enlace a Bootstrap JS y jQuery -->
+        
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script>
     $(document).ready(function() {
-        // Agregar lógica para abrir el modal cuando se hace clic en un producto
         $('.product-content').on('click', function() {
             const index = $(this).data('product-index');
         });
 
-        // Agregar lógica para cambiar la imagen principal al hacer clic en una miniatura
+      
         $('.thumbnail').on('click', function() {
-            const thumbnailIndex = $(this).data('thumbnail-index'); // Obtiene el índice de miniatura desde el atributo de datos
-            const modalId = $(this).closest('.modal').attr('id'); // Obtiene el ID del modal padre
-            const index = modalId.replace('productModal', ''); // Obtiene el índice del producto del ID del modal
+            const thumbnailIndex = $(this).data('thumbnail-index'); 
+            const modalId = $(this).closest('.modal').attr('id'); 
+            const index = modalId.replace('productModal', ''); 
             const modalImage = $('#modal-image' + index);
-            const newImageSrc = $(this).data('image-url'); // Obtiene la URL de la imagen desde el atributo de datos
+            const newImageSrc = $(this).data('image-url');
             modalImage.attr('src', newImageSrc);
         });
 
-        // Agregar lógica para incrementar y decrementar la cantidad
+       
         $('.btn-outline-secondary').on('click', function() {
             const quantityInput = $($(this).data('target'));
             const currentQuantity = parseInt(quantityInput.val());

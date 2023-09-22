@@ -37,11 +37,11 @@
             <li class="submenu-trigger"><a href="#"><i class="fa fa-wrench" aria-hidden="true"></i> Servicios</a>
                 <ul class="submenu">
                     <li><a href="alineacion.php">Alineacion y Balanceo</a></li>
-                    <li><a href="#">Servicio de Montaje</a></li>
-                    <li><a href="">Reparacion de llantas</a></li>
+                    <li><a href="montaje.php">Servicio de Montaje</a></li>
+                    <li><a href="#">Reparacion de llantas</a></li>
                 </ul>
             </li>
-            <li><a href=""><i class="fa fa-address-book" aria-hidden="true"></i> Contacto</a></li>
+            <li><a href="contacto.php"><i class="fa fa-address-book" aria-hidden="true"></i> Contacto</a></li>
             <li><a href="agenda.php"><i class="fa fa-calendar" aria-hidden="true"></i> Agenda Tu Cita  </a></li>
             
         </ul>

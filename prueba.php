@@ -1,60 +1,97 @@
-<div class="container text-center mt-3">
-    <div class="row">
-        <?php
-        // Mostrar los productos en tarjetas con carrusel
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="col">';
-                echo '<div class="card" style="width: 18rem;">';
-                echo '<div id="productCarousel-' . $row['id'] . '" class="carousel slide" data-bs-ride="carousel">';
-                echo '<div class="carousel-inner">';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Lightbox Modal</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
 
-                // Agregar imágenes del carrusel
-                $firstItem = true;
-                $images = explode(',', $row['imagenes']); // Supongo que las imágenes están almacenadas como un string separado por comas
-                foreach ($images as $index => $image) {
-                    echo '<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel"'  . $row['id'] . '" class="carousel slide" data-bs-ride="carousel">';
-                    echo '<div class="carousel-inner">';
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-                    $firstItem = true;
-                    $images = explode(',', $row['imagen']);
-                    foreach ($images as $index => $image) {
-                        echo '<div class="carousel-item' . ($firstItem ? ' active' : '') . '">';
-                        echo '<img src="' . $image . '" class="d-block w-100" alt="Imagen ' . ($index + 1) . '">';
-                        echo '</div>';
-                        $firstItem = false;
-                    }
-                }
+.image {
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+}
 
-                echo '</div>';
-                echo '<button class="carousel-control-prev" type="button" data-bs-target="#productCarousel-' . $row['id'] . '" data-bs-slide="prev">';
-                echo '<span class="carousel-control-prev-icon" aria-hidden="true"></span>';
-                echo '<span class="visually-hidden">Previous</span>';
-                echo '</button>';
-                echo '<button class="carousel-control-next" type="button" data-bs-target="#productCarousel-' . $row['id'] . '" data-bs-slide="next">';
-                echo '<span class="carousel-control-next-icon" aria-hidden="true"></span>';
-                echo '<span class="visually-hidden">Next</span>';
-                echo '</button>';
-                echo '</div>';
+.image img {
+    
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
 
-                echo '<div class="card-body">';
-                echo '<h5 class="card-title">' . $row['nombre'] . '</h5>';
-                echo '<p class="card-text">' . $row['descripcion'] . '</p>';
-                echo '<p class="card-text">Rin: ' . $row['rin'] . '</p>';
-                echo '<p class="card-text">Marca: ' . $row['marca'] . '</p>';
-                echo '<p class="card-text">Precio: ' . $row['precio'] . '</p>';
-                echo '<p class="card-text">Stock: ' . $row['stock'] . '</p>';
-                echo '<a href="#" class="btn btn-primary">Detalles</a>';
-                echo '</div>';
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
-                echo '</div>';
-                echo '</div>';
-            }
-        } else {
-            echo '<div class="col">';
-            echo '<p>No se encontraron productos con los filtros seleccionados.</p>';
-            echo '</div>';
-        }
-        ?>
+.image:hover .overlay {
+    opacity: 1;
+}
+
+.modal {
+    background-color: #fff;
+    
+   
+padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    position: relative;
+    text-align: center;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #000;
+}
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="image">
+            <img src="imagenes/image5.jpg" alt="Imagen 1">
+            <div class="overlay">
+                <div class="modal">
+                    <img src="imagenes/image1.jpg" alt="Imagen 1">
+                    <label for="modal-1" class="close-modal">&#10006;</label>
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <img src="imagenes/image3.jpg" alt="Imagen 2">
+            <div class="overlay">
+                <div class="modal">
+                    <img src="imagenes/image2.jpg" alt="Imagen 2">
+                    <label for="modal-2" class="close-modal">&#10006;</label>
+                </div>
+            </div>
+        </div>
+        <!-- Agrega más imágenes aquí -->
     </div>
-</div>
+</body>
+</html>
+

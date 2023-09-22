@@ -75,13 +75,21 @@
     display: flex;
     justify-content: center;
 }
+h3{
+    text-align: center;
+}
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: justify;
+}
+
 
     </style>
 </head>
 
 <body>
     <div class="container mt-5">
-        <h3>Servicios</h3>
+        <h3>SERVICIOS</h3>
         <div class="slider-container">
             <div class="slider">
                 <?php include 'conexion.php';
@@ -94,7 +102,7 @@
                 echo'<h3>' . $fila["name"] . '</h3>';
                 echo'<p>' . $fila["description"] . '</p>';
                 echo' <div class="button-container mt-3">';
-                    echo' <a href="#" class="btn btn-primary align-self-center">Mas Informacion</a>';
+                    echo' <a href="' . $fila["button_ruta"] . '" class="btn btn-primary align-self-center">Mas Informacion</a>';
                     echo'</div>';
 
                 echo'</div>';

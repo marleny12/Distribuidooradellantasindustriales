@@ -15,7 +15,7 @@
           // Ejecutar consulta para obtener los productos
           $sql = "SELECT products.*
           FROM products
-          WHERE products.category_id = 3";
+          WHERE products.category_id = 2";
           $result = $conn->query($sql);
           
           if ($result->num_rows > 0) {

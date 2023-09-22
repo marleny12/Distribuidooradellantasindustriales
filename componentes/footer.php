@@ -91,9 +91,9 @@
             </ul>
             <div class="divider"></div>
             <ul class="nav-icon">
-                <li class="ms-3"><a class="text-body-secondary nav-icon" href="#"><i class="fa fa-whatsapp"></i></a></li>
-                <li class="ms-3"><a class="text-body-secondary nav-icon" href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="ms-3"><a class="text-body-secondary nav-icon" href="#"><i class="fa fa-map-marker"></i></a></li>
+                <li class="ms-3"><a class="text-body-secondary nav-icon" href="#"><i class="fa fa-whatsapp" target="_blank"></i></a></li>
+                <li class="ms-3"><a class="text-body-secondary nav-icon" href="https://www.facebook.com/people/Distribuidora-de-Llantas-Industriales-Ajalpan/61550667296394/" target="_blank"><i class="fa fa-facebook" ></i></a></li>
+                <li class="ms-3"><a class="text-body-secondary nav-icon" href="https://maps.app.goo.gl/hEYT1AosgwgadAwZ6" target="_blank"><i class="fa fa-map-marker"></i></a></li>
             </ul>
         </footer>
 
