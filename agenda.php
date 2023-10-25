@@ -293,22 +293,7 @@ error_reporting(E_ALL);
             const resumenFecha = document.getElementById('resumen-fecha');
             const resumenHora = document.getElementById('resumen-hora');
 
-            var selectHoras = document.getElementById("hora");
-            var opcionesHoras = Array.from(selectHoras.options).slice(1).map(function(option) {
-        return option.value;
-    });
-
-
-    selectHoras.addEventListener("change", function() {
-    var horaSeleccionada = selectHoras.value;
-
-   
-    if (horasOcupadas.includes(horaSeleccionada)) {
-        alert("La hora seleccionada ya está ocupada. Por favor, elige otra hora.");
-        selectHoras.value = "";
-    }
-});
-
+  
 
             citaForm.addEventListener('input', function(event) {
                 const serviciosSeleccionados = Array.from(document.querySelectorAll('input[name="servicio[]"]:checked'))

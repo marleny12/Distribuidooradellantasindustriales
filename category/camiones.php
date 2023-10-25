@@ -26,7 +26,7 @@
                   $product = [
                       'name' => $row['name'],
                       'price' => '$' . $row['price'],
-                      'description' => $row['description'],
+                      'marca' => $row['marca'],
                       'images' => explode(';', $row['image_path'])
                   ];
           

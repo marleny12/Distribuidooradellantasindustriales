@@ -19,6 +19,21 @@
         <?php
         include 'componentes/carrusel.php';
         ?>
+
+<div class="container text-justify ">
+            <div class="row">
+                <div class="col">
+                    
+                </div>
+                <div class="col">
+                    <video controls width="540" height="360">
+                        <source src="imagenes/video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+          
+        </div>
+
         <?php
         include 'targetas.php';
         ?>
@@ -45,13 +60,24 @@
 
             <div class="row">
                 <div class="col">
-                    <img src="imagenes/goodyear.jpg" alt="" width="200" height="100">
+                    <img src="imagenes/austone.png" alt="" width="200" height="100">
                 </div>
                 <div class="col">
                     <img src="imagenes/Sailun.jpg" alt="" width="200" height="100">
                 </div>
                 <div class="col">
                     <img src="imagenes/pirelli.png" alt="" width="200" height="100">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img src="imagenes/road.png" alt="" width="200" height="100">
+                </div>
+                <div class="col">
+                    <img src="imagenes/fortune.png" alt="" width="150" height="70">
+                </div>
+                <div class="col">
+                    <img src="imagenes/goodride.png" alt="" width="200" height="70">
                 </div>
             </div>
         </div>

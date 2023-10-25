@@ -51,6 +51,7 @@
                 <img class="bd-placeholder-img" src="imagenes/PROMO3.png" width="100%" height="100%"
                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"
                         focusable="false">
+                        <video class="bd-placeholder-img" src="imagenes/video.mp4"></video>
                     <div class="container">
                         <div class="carousel-caption text-start">
                         <div class="transparent-box">

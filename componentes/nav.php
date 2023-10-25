@@ -21,7 +21,8 @@
             <li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a></li>
             <li class="submenu-trigger"><a href="#"><i class="fa fa-list-alt" aria-hidden="true"></i> Catalogo </a>
                 <ul class="submenu">
-                    <li><a href="auycam.php">Automovil y Camioneta</a></li>
+                    <li><a href="auycam.php">Auto y Camioneta</a></li>
+                    <li><a href="camionetas.php">Camioneta</a></li>
                     <li><a href="camiones.php">Camiones</a></li>
                     <li><a href="tractores.php">Tractores</a></li>
                 </ul>
@@ -42,8 +43,9 @@
                 </ul>
             </li>
             <li><a href="contacto.php"><i class="fa fa-address-book" aria-hidden="true"></i> Contacto</a></li>
-            <li><a href="agenda.php"><i class="fa fa-calendar" aria-hidden="true"></i> Agenda Tu Cita  </a></li>
-            
+            <li><a href="agenda.php"><i class="fa fa-calendar" aria-hidden="true"></i> Agenda Tu Cita </a></li>
+            <li><a href="mostrar_carrito.php"> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+
         </ul>
         <div class="hide">
             <i class="fa fa-bars" aria-hidden="true"></i> Menu
@@ -52,11 +54,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <script>
-        $(".hide").on('click', function () {
+        $(".hide").on('click', function() {
             $("nav ul").toggle('slow');
         })
 
-        $(".submenu-trigger > a").on('click', function (e) {
+        $(".submenu-trigger > a").on('click', function(e) {
             e.preventDefault();
             $(this).siblings(".submenu").slideToggle('fast');
         });
