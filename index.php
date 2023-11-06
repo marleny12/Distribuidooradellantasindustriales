@@ -19,22 +19,7 @@
         <?php
         include 'componentes/carrusel.php';
         ?>
-
-<div class="container text-justify ">
-            <div class="row">
-                <div class="col">
-                    
-                </div>
-                <div class="col">
-                    <video controls width="540" height="360">
-                        <source src="imagenes/video.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-          
-        </div>
-
-        <?php
+   <?php
         include 'targetas.php';
         ?>
         <br><br>

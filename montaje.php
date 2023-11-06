@@ -234,7 +234,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1>Montaje</h1>
+                <h1>Servicio de Montaje, Reparaciòn y Cambio de aceite </h1>
             </div>
             <div class="btn-container">
                 <a href="agenda.php" type="button" class="btn"><i class="fa fa-calendar" aria-hidden="true"></i> Agendar cita </a>
@@ -263,6 +263,32 @@
                 <div class="col">
                     <h2 class="colored-title"><i class="fa fa-map-marker" aria-hidden="true"></i> Localizar Taller</h2>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3786.5124265962745!2d-97.25688792481205!3d18.36951518269496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c5b7fc4ede893b%3A0x2d6aa2dcad93f80c!2sDistribuidora%20de%20Llantas%20Industriales!5e0!3m2!1ses-419!2smx!4v1695051919431!5m2!1ses-419!2smx" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-1">
+                    <h2>REPARACIÒN DE LLANTAS </h2>
+                    <br>
+                    <h3>¿Como funciona?</h3>
+                    <br>
+                    <P class="text-justify">El proceso de reparación de una llanta puede variar en función del daño, pero en líneas generales se compone de desmontaje, limpieza, rellenado de material, torneado.</P>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-1">
+                    <h2>CAMBIO DE ACEITE  </h2>
+                    <br>
+                    <h3>BENEFICIOS</h3>
+                    <br>
+                    <P class="text-justify">Reemplazar el aceite del motor es crucial para mantener un alto rendimiento. Por lo tanto, puede ser una de las cosas más importantes que haga para mantener su carro en buenas condiciones de funcionamiento.</P>
                 </div>
             </div>
 

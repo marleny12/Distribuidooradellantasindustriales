@@ -87,7 +87,6 @@
                 <li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
                 <li class="nav-item"><a href="" class="nav-link">Aviso de privacidad</a></li>
                 <li class="nav-item"><a href="" class="nav-link">Agendar cita</a></li>
-                <li class="nav-item"><a href="" class="nav-link">Contactanos</a></li>
             </ul>
             <div class="divider"></div>
             <ul class="nav-icon">

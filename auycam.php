@@ -68,6 +68,26 @@ $start = ($page - 1) * PRODUCTS_PER_PAGE; ?>
             background-color: #112d4e;
             color: #fff;
         }
+
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #search-box {
+            width: 300px;
+            padding: 10px;
+        }
+
+        #results {
+            list-style: none;
+            padding: 0;
+        }
+
+        #results li {
+            margin: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -75,24 +95,8 @@ $start = ($page - 1) * PRODUCTS_PER_PAGE; ?>
     <?php include 'componentes/nav.php'; ?>
 
     <main>
-        <div class="container">
-
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="productSearch" placeholder="Escribe el nombre del producto">
-                    </div>
-                </div>
-                <div class="col">
-                    <button id="searchProduct" class="btn btn-primary">Buscar</button>
-                </div>
-
-                
-            </div>
-
-            <div id="product-container" class="row">
-                    <!-- Aquí se mostrarán los resultados de la búsqueda -->
-                </div>
+        <div class="container mt-3">
+          
 
             <div class="row" id="mosaic-gallery">
                 <?php include 'category/product.php' ?>
@@ -105,69 +109,68 @@ $start = ($page - 1) * PRODUCTS_PER_PAGE; ?>
                     </div>
                 <?php endforeach; ?>
             </div>
-        </div>
 
-        <?php foreach ($products as $index => $product) : ?>
-            <div class="modal fade" id="productModal<?php echo $index; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img id="modal-image<?php echo $index; ?>" src="<?php echo $product['images'][0]; ?>" alt="<?php echo $product['name']; ?>">
-                                </div>
-                                <div class="col-md-6">
 
-                                    <h3 id="modal-product-name<?php echo $index; ?>"><?php echo $product['name']; ?></h3>
-                                    <p id="modal-product-description<?php echo $index; ?>"><?php echo $product['marca']; ?></p>
-                                    <p id="modal-product-price<?php echo $index; ?>">Precio: <?php echo $product['price']; ?></p>
-                                    <form method="post" action="procesar_carrito.php">
-                                        <input type="hidden" name="product-img" value="<?php echo $product['images'][0]; ?>">
-                                        <input type="hidden" name="product-name" value="<?php echo $product['name']; ?>">
-                                        <input type="hidden" name="product-price" value="<?php echo $product['price']; ?>">
-                                        <input type="hidden" name="product-index" value="<?php echo $index; ?>">
-                                        <div class="form-group" id="quantity-input-group<?php echo $index; ?>">
-                                            <label for="quantity<?php echo $index; ?>">Cantidad:</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <button class="btn btn-outline-secondary decrease-quantity" data-target="#quantity<?php echo $index; ?>" type="button">-</button>
+            <?php foreach (array_slice($products, $start, PRODUCTS_PER_PAGE) as $index => $product) : ?>
+                <div class="modal fade" id="productModal<?php echo $index; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img id="modal-image<?php echo $index; ?>" src="<?php echo $product['images'][0]; ?>" alt="<?php echo $product['name']; ?>">
+                                    </div>
+                                    <div class="col-md-6">
+                                         <h3 id="modal-product-name<?php echo $index; ?>"><?php echo $product['name']; ?></h3>
+                                        <p id="modal-product-description<?php echo $index; ?>"><?php echo $product['marca']; ?></p>
+                                        <p id="modal-product-price<?php echo $index; ?>">Precio: <?php echo $product['price']; ?></p>
+                                        <form method="post" action="procesar_carrito.php">
+                                            <input type="hidden" name="product-img" value="<?php echo $product['images'][0]; ?>">
+                                            <input type="hidden" name="product-name" value="<?php echo $product['name']; ?>">
+                                            <input type="hidden" name="product-price" value="<?php echo $product['price']; ?>">
+                                            <input type="hidden" name="product-index" value="<?php echo $index; ?>">
+                                            <div class="form-group" id="quantity-input-group<?php echo $index; ?>">
+                                                <label for="quantity<?php echo $index; ?>">Cantidad:</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-outline-secondary decrease-quantity" data-target="#quantity<?php echo $index; ?>" type="button">-</button>
+                                                    </div>
+                                                    <input type="text" name="quantity" id="quantity<?php echo $index; ?>" class="form-control text-center" value="1" min="1">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-secondary increase-quantity" data-target="#quantity<?php echo $index; ?>" type="button">+</button>
+                                                    </div>
                                                 </div>
-                                                <input type="text" name="quantity" id="quantity<?php echo $index; ?>" class="form-control text-center" value="1" min="1">
-                                                <div class="input-group-append">
-                                                    <button class="btn btn-outline-secondary increase-quantity" data-target="#quantity<?php echo $index; ?>" type="button">+</button>
-                                                </div>
+                                                <br>
+                                                <button type="submit" name="add-to-cart" class="btn btn-danger">Agregar al carrito</button>
                                             </div>
-                                            <br>
-                                            <button type="submit" name="add-to-cart" class="btn btn-danger">Agregar al carrito</button>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <div id="product-thumbnails<?php echo $index; ?>" class="d-flex flex-wrap">
-                                <!-- Aquí se generarán las miniaturas de imágenes del producto -->
-                                <?php foreach ($product['images'] as $imageIndex => $image) : ?>
-                                    <div class="thumbnail" style="background-image: url(<?php echo $image; ?>);" data-thumbnail-index="<?php echo $imageIndex; ?>" data-image-url="<?php echo $image; ?>"></div>
-                                <?php endforeach; ?>
+                            <div class="modal-footer">
+                                <div id="product-thumbnails<?php echo $index; ?>" class="d-flex flex-wrap">
+                                    <!-- Aquí se generarán las miniaturas de imágenes del producto -->
+                                    <?php foreach ($product['images'] as $imageIndex => $image) : ?>
+                                        <div class="thumbnail" style="background-image: url(<?php echo $image; ?>);" data-thumbnail-index="<?php echo $imageIndex; ?>" data-image-url="<?php echo $image; ?>"></div>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            <?php endforeach; ?>
+
+
+            <div class="pagination">
+                <?php
+                $totalPages = ceil(count($products) / PRODUCTS_PER_PAGE);
+                for ($i = 1; $i <= $totalPages; $i++) {
+                    $isActive = ($i == $page) ? 'active' : '';
+                    echo "<a class='page-link $isActive' href='?page=$i'>$i</a>";
+                }
+                ?>
             </div>
-        <?php endforeach; ?>
-
-
-        <div class="pagination">
-            <?php
-            $totalPages = ceil(count($products) / PRODUCTS_PER_PAGE);
-            for ($i = 1; $i <= $totalPages; $i++) {
-                $isActive = ($i == $page) ? 'active' : '';
-                echo "<a class='page-link $isActive' href='?page=$i'>$i</a>";
-            }
-            ?>
         </div>
-
 
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -206,41 +209,7 @@ $start = ($page - 1) * PRODUCTS_PER_PAGE; ?>
                 });
             });
         </script>
-
-<script>
-$(document).ready(function() {
-    // Función para realizar la búsqueda y actualizar los productos
-    function searchProducts(searchTerm) {
-        searchTerm = searchTerm.toLowerCase();
-
-        // Filtra los productos que coinciden con el término de búsqueda
-        var matchingProducts = <?php echo json_encode($products); ?>.filter(function(product) {
-            return product.name.toLowerCase().includes(searchTerm);
-        });
-
-        // Limpia el contenedor de productos
-        $("#product-container").empty();
-
-        // Muestra los productos coincidentes en el contenedor
-        matchingProducts.forEach(function(product, index) {
-            $("#product-container").append(`
-                <div class="col-md-4 product-content" data-toggle="modal" data-target="#productModal${index}" data-product-index="${index}">
-                    <img src="${product.images[0]}" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p>Precio: ${product.price}</p>
-                    <p>${product.marca}</p>
-                </div>
-            `);
-        });
-    }
-
-    // Maneja el evento de clic en el botón de búsqueda
-    $("#searchProduct").on("click", function() {
-        var searchTerm = $("#productSearch").val();
-        searchProducts(searchTerm);
-    });
-});
-</script>
+    
 
 
 

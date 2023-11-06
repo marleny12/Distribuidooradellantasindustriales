@@ -31,15 +31,14 @@
                 <ul class="submenu">
                     <li><a href="auycam.php">Camaras</a></li>
                     <li><a href="camiones.php">Rines</a></li>
-                    <li><a href="tractores.php">Balbula</a></li>
+                    <li><a href="complementos.php">Valbula</a></li>
                 </ul>
             </li>
 
             <li class="submenu-trigger"><a href="#"><i class="fa fa-wrench" aria-hidden="true"></i> Servicios</a>
                 <ul class="submenu">
                     <li><a href="alineacion.php">Alineacion y Balanceo</a></li>
-                    <li><a href="montaje.php">Servicio de Montaje</a></li>
-                    <li><a href="#">Reparacion de llantas</a></li>
+                    <li><a href="montaje.php">Servicio de Montaje, reparación y cambio de aceite</a></li>
                 </ul>
             </li>
             <li><a href="contacto.php"><i class="fa fa-address-book" aria-hidden="true"></i> Contacto</a></li>
@@ -51,6 +50,7 @@
             <i class="fa fa-bars" aria-hidden="true"></i> Menu
         </div>
     </nav>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <script>
